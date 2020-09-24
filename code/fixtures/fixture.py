@@ -1,7 +1,6 @@
-from random import randint, random
+import random
 import pytest
 
 @pytest.fixture(scope='class')
-def random():
-    """Возвращает рандомную переменную"""
+def random_func():
     yield random.randint(0,100)
