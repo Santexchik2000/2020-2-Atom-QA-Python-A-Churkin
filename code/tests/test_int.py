@@ -55,4 +55,4 @@ class TestInt:
     def test_9(self, b):
         """Тест проверки сложения комплексных чисел"""
         assert isinstance(
-            (complex(self.value+randint(b, 100))+complex(randint(b, 50))), complex) 
+            (complex(self.value+randint(b, 100))+complex(randint(b, 50))), complex)
