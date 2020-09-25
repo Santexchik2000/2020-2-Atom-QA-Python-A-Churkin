@@ -1,7 +1,6 @@
 import pytest
 from random import randint, random
 
-
 class Testlist():
 
     def test_1(self):
