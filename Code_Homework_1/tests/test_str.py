@@ -11,7 +11,7 @@ class TestStr():
             assert self.str1/self.str2
 
     def test_2(self):
-        """Второй Тест деления строк_"""
+        """Второй Тест деления строк на другой тип"""
         with pytest.raises(TypeError):
             assert self.str1/int(3)
 
@@ -25,21 +25,13 @@ class TestStr():
         """Тест метода len на str"""
         assert len(self.str1) == 5
         assert len(self.str2+self.str1) == 10
-        assert len(str(int(10-9))) == 1
 
-    @pytest.mark.parametrize('i', ["olleH"])
-    def test_5(self, i):
+    def test_5(self):
         """Тест метода реверсии строки"""
-        assert self.str1 == i[::-1]
+        string1 = "Hello"
+        string2 = "olleH"
+        assert string1 == string2[::-1]
 
-    @pytest.mark.parametrize('a', ["world"])
-    def test_6(self, a):
-        """Тест метода title"""
-        assert self.str2 == a.title()
-
-    @pytest.mark.parametrize('b', ["world"])
-    def test_7(self, b):
-        """Тест метода верхних и нижних регистров"""
-        assert b.islower()
-        with pytest.raises(AssertionError):
-            assert b.isupper()
+    @pytest.mark.parametrize('i', range(1, 10))
+    def test_6(self, i, random_number):
+        assert isinstance((self.str1+str(i)+self.str2+str(random_number)), str)

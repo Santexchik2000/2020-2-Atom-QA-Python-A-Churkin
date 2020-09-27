@@ -5,21 +5,21 @@ from random import randint, random
 class TestInt:
     value = randint(0, 1000)
 
-    def test_1_zero_division(self):
+    def test_1(self):
         """Тест деления на ноль"""
         with pytest.raises(ZeroDivisionError):
             assert self.value/0
 
-    def test_2_abs(self):
+    def test_2(self):
         """Тест метода abs"""
         assert abs(self.value) >= 0
 
-    def test_3_negative_number(self):
+    def test_3(self):
         """Тест функции -х"""
         with pytest.raises(AssertionError):
             assert -self.value > 0
 
-    def test_4_assertion_mistake(self):
+    def test_4(self):
         """Тест оператора равенства"""
         with pytest.raises(AssertionError):
             assert (0.1+0.2) == 0.3
